@@ -7,7 +7,7 @@
 		<title>Clarissa Alexandra Clement</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="resources/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="resources/css/reset.min.css" />
 		<link rel="stylesheet" type="text/css" href="resources/css/styles.min.css" />
 	</head>
 
