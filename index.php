@@ -178,6 +178,9 @@
 						<li>
 							<a rel="nofollow noreferrer" href="http://www.foley-oneill.com/">Foley O'Neill</a>
 						</li>
+						<li>
+							<a rel="nofollow noreferrer" href="https://github.com/MisanthropeGirl">GitHub</a>
+						</li>
 					</ul>
 				</section>
 				<section id="education">
