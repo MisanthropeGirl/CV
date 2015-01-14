@@ -1,0 +1,5 @@
+Options All -Indexes MultiViews
+
+RewriteEngine On
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteRule ^(.*)$ /index.php?page=$1 [L]
