@@ -46,34 +46,49 @@ html {
  * Screen Reader only
  * Hide text without affecting accessibility
  */
+/*
+ * Base
+ */
+a {
+  color: #6587ed;
+  text-decoration: none;
+}
+h1 {
+  font-weight: bold;
+}
+p {
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+/*
+ * Layout
+ */
 body {
   background-color: #fafafa;
   color: #333333;
 }
-body > div {
+.layout {
   font-family: Verdana Helvetica Arial sans-serif;
   font-size: 20px;
   font-size: 2rem;
   line-height: 1.2;
 }
 @media (min-width: 480px) {
-  body > div {
+  .layout {
     font-size: 18px;
     font-size: 1.8rem;
     line-height: 1.22222222;
   }
 }
 @media (min-width: 750px) {
-  body > div {
+  .layout {
     font-size: 16px;
     font-size: 1.6rem;
     line-height: 1.25;
   }
 }
-/*
- * Sectioning
- */
-main {
+.layout__body {
   max-width: 750px;
   max-width: 75rem;
   margin-left: 10px;
@@ -82,42 +97,12 @@ main {
   margin-right: 1rem;
 }
 @media (min-width: 750px) {
-  main {
+  .layout__body {
     margin-left: auto;
     margin-right: auto;
   }
 }
-section {
-  margin-bottom: 20px;
-  margin-bottom: 2rem;
-}
-#employmentHistory section:nth-of-type(n + 3) div {
-  display: none;
-}
-header h1 {
-  font-weight: bold;
-}
-section header {
-  background: linear-gradient(#6587ed, #fafafa);
-  margin-bottom: 10px;
-  margin-bottom: 1rem;
-  padding: 3px;
-  padding: 0.3rem;
-  text-transform: uppercase;
-}
-section section header {
-  background: none;
-  margin-bottom: 0;
-  padding: 0;
-  text-transform: none;
-}
-div > header {
-  font-size: 2em;
-  margin-bottom: 20px;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-footer {
+.layout__footer {
   border: 1px solid #6587ed;
   border-bottom-color: #fafafa;
   border-top-left-radius: 15px;
@@ -133,7 +118,7 @@ footer {
   margin-right: 1rem;
 }
 @media (min-width: 750px) {
-  footer {
+  .layout__footer {
     margin-left: auto;
     margin-right: auto;
     width: 750px;
@@ -141,7 +126,7 @@ footer {
   }
 }
 @media (min-width: 950px) {
-  footer {
+  .layout__footer {
     position: fixed;
     left: calc(50% - 37.5rem - 2rem - 7.4rem);
     top: 60px;
@@ -153,35 +138,99 @@ footer {
     width: auto;
   }
 }
-/*
- * Lists
- */
-#keySkills dt {
+.layout__header {
+  font-size: 2em;
+  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.cv-section {
+  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+.cv-section__header {
+  background: linear-gradient(#6587ed, #fafafa);
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  padding: 3px;
+  padding: 0.3rem;
+  text-transform: uppercase;
+}
+.cv-section__list--definition dt {
   float: left;
   font-weight: bold;
   width: 100px;
   width: 10rem;
 }
-#keySkills dt::after {
+.cv-section__list--definition dt::after {
   content: ":\00A0";
 }
-#keySkills dd {
+.cv-section__list--definition dd {
   margin-left: 110px;
   margin-left: 11rem;
 }
-footer ul {
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.cv-section__list--unordered {
+  list-style-type: circle;
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  margin-left: 20px;
+  margin-left: 2rem;
+}
+.cv-section__list--unordered li {
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  margin-left: 10px;
+  margin-left: 1rem;
+  text-align: justify;
+}
+.job {
+  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+.job:nth-of-type(n + 3) .job--about {
+  display: none;
+}
+.job__header {
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
+}
+@media (min-width: 480px) {
+  .job__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 480px) {
+  .job--employer {
+    width: 100%;
+    flex: none;
+  }
+  .job span {
+    font-style: italic;
+  }
+  .no-flexbox .job {
+    clear: both;
+    content: "";
+    display: table;
+    width: 100%;
+  }
+  .no-flexbox .job span.job--period {
+    float: right;
+  }
+  .no-flexbox .job span.job--title {
+    float: left;
+  }
+}
+.additional-information {
   display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-top: 10px;
   margin-top: 1rem;
   margin-bottom: 10px;
   margin-bottom: 1rem;
 }
-.no-flexbox footer ul {
+.no-flexbox .additional-information {
   clear: both;
   content: "";
   display: table;
@@ -189,93 +238,36 @@ footer ul {
   margin-right: auto;
 }
 @media (min-width: 950px) {
-  footer ul {
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .additional-information {
+    flex-direction: column;
     margin-left: 10px;
     margin-left: 1rem;
     margin-right: 10px;
     margin-right: 1rem;
   }
 }
-footer ul li {
+.additional-information__item {
   padding-left: 10px;
   padding-left: 1rem;
   padding-right: 10px;
   padding-right: 1rem;
 }
-.no-flexbox footer ul li {
+.no-flexbox .additional-information__item {
   float: left;
 }
 @media (min-width: 950px) {
-  footer ul li {
+  .additional-information__item {
     padding-top: 10px;
     padding-top: 1rem;
     padding-bottom: 10px;
     padding-bottom: 1rem;
   }
-  .no-flexbox footer ul li {
+  .no-flexbox .additional-information__item {
     float: none;
   }
 }
-footer ul li a {
+.additional-information__link {
   display: block;
   height: 32px;
   width: 32px;
-}
-main ul {
-  list-style-type: circle;
-  margin-bottom: 10px;
-  margin-bottom: 1rem;
-  margin-left: 20px;
-  margin-left: 2rem;
-}
-main ul li {
-  margin-bottom: 10px;
-  margin-bottom: 1rem;
-  margin-left: 10px;
-  margin-left: 1rem;
-  text-align: justify;
-}
-/*
- * Text
- */
-p {
-  margin-bottom: 10px;
-  margin-bottom: 1rem;
-  text-align: justify;
-}
-header p span {
-  display: block;
-  font-style: italic;
-}
-@media (min-width: 480px) {
-  header p {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .no-flexbox header p {
-    clear: both;
-    content: "";
-    display: table;
-    width: 100%;
-  }
-  .no-flexbox header p span.job-period {
-    float: right;
-  }
-  .no-flexbox header p span.job-title {
-    float: left;
-  }
-}
-/*
- * Links
- */
-a {
-  color: #6587ed;
-  text-decoration: none;
 }
