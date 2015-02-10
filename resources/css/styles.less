@@ -31,11 +31,11 @@ ul {
  * Layout
  */
 body {
-	background-color:@colour-bg;
+	.bg-co(@colour-bg);
 	color:@colour-black;
 }
 .layout {
-	font-family:Verdana Helvetica Arial sans-serif;
+	.f-ff(~"Verdana Helvetica Arial sans-serif");
 	.f-fsi(2);
 	.f-lh(1.2);
 	@media (min-width:@bp-1) {
@@ -64,10 +64,8 @@ body {
 		}
 		@media (min-width:@bp-3) {
 			position:fixed;
-			left:~"calc(50% - 37.5rem - 2rem - 7.4rem)"; // mid-point - half main width - margin - footer width
-			.add-unit-to-value(6);
-			top:@pxString;
-			top:@remString;
+			.check-value(~"calc(50% - 37.5rem - 2rem - 7.4rem)", left); // mid-point - half main width - margin - footer width
+			.check-value(6, top);
 			.b-bbc(@colour-blue);
 			.br(15px);
 			.bs(2px 2px 5px #aaa);
@@ -76,7 +74,7 @@ body {
 		}
 	}
 	&__header {
-		font-size:2em;
+		.f-fsi(2em);
 		.m-mb(2);
 		.t-ta(center);
 	}
@@ -85,7 +83,7 @@ body {
 .cv-section {
 	.m-mb(2);
 	&__header {
-		background:linear-gradient(@colour-blue, @colour-bg);
+		.bg(linear-gradient(@colour-blue, @colour-bg));
 		.m-mb(1);
 		.p(0.3);
 		.t-tt(uppercase);
@@ -133,7 +131,7 @@ body {
 	}
 	@media (min-width:@bp-1) {
 		&--employer {
-			width:100%;
+			.w(100%);
 			.fb-fx(none);
 		}
 		& span {
@@ -142,7 +140,7 @@ body {
 		}
 		.no-flexbox & {
 			.clearfix();
-			width:100%;
+			.w(100%);
 			& span {
 				&.job--period {
 					float:right;
@@ -181,7 +179,7 @@ body {
 	}
 	&__link {
 		display:block;
-		height:32px;
-		width:32px;
+		.h(32px);
+		.w(32px);
 	}
 }
