@@ -62,12 +62,21 @@
 					<header class="cv-section__header">
 						<h1>Employment History</h1>
 					</header>
-						<div class="cv-section__body">
+					<div class="cv-section__body">
+						<!-- <section class="job">
+							<header class="job__header">
+								<h1 class="job--employer">Aurum</h1>
+								<span class="job--title">Front End Developer</span>
+								<span class="job--period">March 2015 - Present</span>
+							</header>
+							<div class="job--about">
+							</div>
+						</section> -->
 						<section class="job">
 							<header class="job__header">
 								<h1 class="job--employer">Morningstar</h1>
 								<span class="job--title">Senior Web Developer</span>
-								<span class="job--period">2008 - Present</span>
+								<span class="job--period">January 2008 - March 2015</span>
 							</header>
 							<div class="job--about">
 								<ul class="cv-section__list--unordered">
@@ -83,7 +92,7 @@
 							<header class="job__header">
 								<h1 class="job--employer">Hemscott</h1>
 								<span class="job--title">Web Developer/Senior Web Developer</span>
-								<span class="job--period">2006 - 2008</span>
+								<span class="job--period">January 2006 - January 2008</span>
 							</header>
 							<div class="job--about">
 								<ul class="cv-section__list--unordered">
