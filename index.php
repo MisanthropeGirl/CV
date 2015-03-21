@@ -63,15 +63,15 @@
 						<h1>Employment History</h1>
 					</header>
 					<div class="cv-section__body">
-						<!-- <section class="job">
+						<section class="job">
 							<header class="job__header">
 								<h1 class="job--employer">Aurum</h1>
 								<span class="job--title">Front End Developer</span>
 								<span class="job--period">March 2015 - Present</span>
 							</header>
-							<div class="job--about">
-							</div>
-						</section> -->
+							<!-- <div class="job--about">
+							</div> -->
+						</section>
 						<section class="job">
 							<header class="job__header">
 								<h1 class="job--employer">Morningstar</h1>

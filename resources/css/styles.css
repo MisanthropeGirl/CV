@@ -187,7 +187,7 @@ body {
   margin-bottom: 20px;
   margin-bottom: 2rem;
 }
-.job:nth-of-type(n + 3) .job--about {
+.job:nth-of-type(n + 4) .job--about {
   display: none;
 }
 .job__header {
