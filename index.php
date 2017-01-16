@@ -42,7 +42,7 @@
 								<abbr title="HyperText Markup Language">HTML</abbr>,
 								<abbr title="Cascading Style Sheets">CSS</abbr>,
 								LESS,
-								JavaScript (including jQuery),
+								JavaScript (including ES2015),
 								<abbr title="Extensible Markup Language">XML</abbr>,
 								<abbr title="EXtensible Stylesheet Language">XSL</abbr> &amp;
 								<abbr title="Extensible Stylesheet Language Formatting Objects">XSL-FO</abbr>
@@ -67,10 +67,14 @@
 							<header class="job__header">
 								<h1 class="job--employer">Aurum</h1>
 								<span class="job--title">Front End Developer</span>
-								<span class="job--period">March 2015 - Present</span>
+								<span class="job--period">March 2015 - Decmber 2016</span>
 							</header>
-							<!-- <div class="job--about">
-							</div> -->
+							<div class="job--about">
+								<ul class="cv-section__list--unordered">
+									<li>Rebuilt the company website, interacting with an external designer and various stakeholders within the company. The result was a modern website with a fresh look and feel built upon an open source CMS system.</li>
+									<li>Helped plan and construct a prototype of a specialised marketing website using the <a href="http://aurelia.io/">Aurelia</a> JavaScript framework for the CEO to use in business presentations and client meetings.</li>
+								</ul>
+							</div>
 						</section>
 						<section class="job">
 							<header class="job__header">
@@ -170,13 +174,16 @@
 					<div class="cv-section__body">
 						<ul class="cv-section__list--unordered">
 							<li>
+								<a rel="nofollow noreferrer" href="https://www.aurum.com/">Aurum</a>
+							</li>
+							<li>
 								<a rel="nofollow noreferrer" href="http://lt.morningstar.com/demo/">Morningstar Integrated Web Tools</a>
 							</li>
 							<li>
 								<a rel="nofollow noreferrer" href="http://ias-av.com/">Interactive Audio Visual Solutions</a>
 							</li>
 							<li>
-								<a rel="nofollow noreferrer" href="http://www.foley-oneill.com/">Foley O'Neill</a>
+								<a rel="nofollow noreferrer" href="http://staging.mount.org.uk/">Mount Cricket Club</a>
 							</li>
 							<li>
 								<a rel="nofollow noreferrer" href="https://github.com/MisanthropeGirl">GitHub</a>
