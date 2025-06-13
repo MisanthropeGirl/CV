@@ -1,4 +1,4 @@
-Options All -Indexes MultiViews
+Options All -Indexes +MultiViews
 
 RewriteEngine On
 RewriteCond $1 !^(index\.php|resources|robots\.txt)
