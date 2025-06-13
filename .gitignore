@@ -1,3 +1,12 @@
-*.sublime-*
+# System files
 .DS_Store
 Thumbs.db
+
+# Sublime
+*.sublime-*
+
+# Project dependencies
+node_modules/
+
+# Output files
+resources/css/
