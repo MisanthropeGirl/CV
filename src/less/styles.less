@@ -1,208 +1,163 @@
-@import "../../../Resources/LESS/common";
-
 @bp-1: 480px;
-@bp-2: 750px;
-@bp-3: 950px;
+@bp-2: 960px;
 
 @colour-bg: #fafafa;
-@colour-black: #333;
+@colour-black: #333333;
 @colour-blue: #6587ed;
 
-
-.clearfix() {
-	clear: both;
-	content: "";
-	display: table;
-}
 
 /*
  * Base
  */
+html {
+	font-family: 'Verdana Helvetica Arial sans-serif';
+	line-height: 1.5;
+}
+
 a {
 	color: @colour-blue;
-	.td(none);
+	text-decoration: none;
 }
-h1 {
-	.f-fw(bold);
-}
-p {
-	.m-mb(1);
-	.t-ta(justify);
-}
-ul {
 
+h1 {
+	margin: 0rem;
+	font-weight: bold;
+}
+
+p {
+	margin: 1rem 0rem 0rem;
+	text-align: justify;
+
+	&:first-child {
+		margin-top: 0.5rem;;
+	}
+
+	&.no-margin {
+		margin: 0rem;
+	}	
+}
+
+ul {
+	padding-left: 2rem;
+
+	&:first-child {
+		margin-top: 0.5rem;;
+	}
+
+	@media (min-width: @bp-2) {
+		padding-left: 4rem;
+	}
+
+	&.plain-list {
+		list-style-type: none;
+		padding: 0rem;
+	}	
 }
 
 /*
  * Layout
  */
 body {
-	.bg-co(@colour-bg);
+	margin-bottom: 4rem;
+	background-color: @colour-bg;
 	color: @colour-black;
 }
 
 .layout {
-	.f-ff(~"Verdana Helvetica Arial sans-serif");
-	.f-lh(1.5);
+
+	&__header {
+		text-align: center;
+
+		h1 {
+			font-size: 2rem;
+		}
+	}
 
 	&__body {
-		.w-maw(48);
-		.m-mh(1);
-
-		@media (min-width: @bp-2) {
-			.m-mh(auto);
-		}
+		max-width: 48rem;
+		margin: 2rem auto 0rem;
 	}
 
 	&__footer {
-		.b(1px solid @colour-blue);
-		.b-bbc(@colour-bg);
-		.br(15px, 15px, 0, 0);
-		.m(2 1 0);
+		margin: 4rem auto 0rem;
 
 		@media (min-width: @bp-2) {
-			.m-mh(auto);
-			.w(48);
-		}
-
-		@media (min-width: @bp-3) {
 			position: fixed;
-			.check-value(~"calc(50% - 24rem - 2rem - 4.5rem)", left); // mid-point - half main width - margin - footer width
-			.check-value(6, top);
-			.b-bbc(@colour-blue);
-			.br(15px);
-			.bs(2px 2px 5px #aaa);
-			.m(0);
-			.w(auto);
+			 // mid-point - half main width - margin - footer width
+			left: calc(50% - 24rem - 2rem - 4.5rem);
+			top: 6rem;
+			border-bottom-color: @colour-blue;
+			border-radius: 15px;
+			box-shadow: 2px 2px 5px #aaaaaa;
+			margin: 0rem;
+			width: auto;
 		}
-	}
-
-	&__header {
-		.f-fsi(2);
-		.m-mb(2);
-		.t-ta(center);
 	}
 }
 
 .cv-section {
-	.m-mb(2);
+	margin-top: 2rem;
 
-	&__header {
-		.m-mb(1);
-		.b-bb(1px solid @colour-blue);
-		.f-fsi(1.125);
-		.t-tt(uppercase);
-	}
-
-	&__list {
-		&--definition {
-			dt {
-				float: left;
-				.f-fw(bold);
-				.w(6);
-
-				&::after {
-					content: ": \00A0";
-				}
-			}
-
-			dd {
-				.m-ml(7);
-			}
-		}
-		&--unordered {
-			list-style-type: circle;
-			.m-mb(1);
-			.m-ml(2);
-
-			& li {
-				.m-mb(1);
-				.m-ml(1);
-				.t-ta(justify);
-			}
-		}
+	&__header h1 {
+		border-bottom: 1px solid @colour-blue;
+		font-size: 1.125rem;
+		text-transform: uppercase;
 	}
 }
 
 .job {
-	.m-mb(2);
+	margin-top: 2rem;
 
-	&:nth-of-type(n + 4) {
-		& .job--about {
-			display: none;
+	&:first-of-type {
+		margin-top: 0.5rem;
+	}
+
+	&__title {
+		font-size: 1rem;
+
+		span:not(:nth-last-of-type(-n+2)) {
+			&::after {
+				content: '—';
+				margin-left: 0.25rem;
+			}
 		}
 	}
 
-	&__header {
-		.m-mb(1);
-
-		@media (min-width: @bp-1) {
-			.fb();
-			.fb-w(wrap);
-			.fb-jc(space-between);
-		}
-	}
-
-	@media (min-width: @bp-1) {
-		&--employer {
-			.w(100%);
-			.fb-fx(none);
+	&__about {
+		ul ul {
+			margin-top: 0rem;
 		}
 
-		& span {
-			//display: block;
-			.f-fsty(italic);
-		}
-
-		.no-flexbox & {
-			.clearfix();
-			.w(100%);
-
-			&.job--period {
-				float: right;
-			}
-
-			&.job--title {
-				float: left;
-			}
+		li {
+			margin-top: 0.25rem;
+			text-align: justify;
 		}
 	}
 }
 
 .additional-information {
-	.fb();
-	.fb-jc(center);
-	.m-mv(0.5);
+	display: flex;
+	justify-content: center;
+	margin: 0rem;
+	padding: 0rem;
+	list-style-type: none;
 
-	.no-flexbox & {
-		.clearfix();
-		.m-mh(auto);
-	}
-
-	@media (min-width: @bp-3) {
-		.fb-d(column);
-		.m-mh(0.5);
+	@media (min-width: @bp-2) {
+		flex-direction: column;
+		margin: 0.5rem;
 	}
 
 	&__item {
-		.p-ph(1);
+		padding: 0rem 1rem;
 
-		.no-flexbox & {
-			float: left;
-		}
-
-		@media (min-width: @bp-3) {
-			.p-pv(0.75);
-
-			.no-flexbox & {
-				float: none;
-			}
+		@media (min-width: @bp-2) {
+			padding: 0.75rem 1rem;
 		}
 	}
 
 	&__link {
 		display: block;
-		.h(32px);
-		.w(32px);
+		height: 2rem;
+		width: 2rem;
 	}
 }

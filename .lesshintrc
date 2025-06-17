@@ -1,0 +1,23 @@
+{
+  "attributeQuotes": true,
+  "decimalZero": leading,
+  "emptyRule": false,
+  "finalNewline": true,
+  "hexLength": "long",
+  "hexNotation": "lowercase",
+  "hexValidation": true,
+  "importantRule": false,
+  "newlineAfterBlock": true,
+  "propertyOrdering": {
+    "style": "concentric"
+  },
+  "pseudoElements": true,
+  "spaceAfterPropertyColon": {
+    "enabled": true,
+    "style": "one_space" // Comments are allowed
+  },
+  "spaceAroundComma" {
+    "allowNewline": true
+  },
+  "trailingSemicolon": true
+}
