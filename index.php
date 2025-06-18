@@ -10,213 +10,207 @@
 	</head>
 
 	<body class="layout">
-			<header class="layout__header">
+		<header class="layout__header">
+			<div>
 				<h1 class="layout__title">Clarissa Clement</h1>
 				<span>London, UK &#8212; Willing to relocate</span>
-			</header>
-			<main class="layout__body">
-				<section class="cv-section">
-					<header class="cv-section__header">
-						<h1>Profile</h1>
-					</header>
-					<div class="cv-section__body">
-						<p>I am a versatile front end web developer with more then 20 years experience across a variety of industries and in multiple team sizes on projects from small marketing sites to enterprise platforms. I am used to liaising with clients, project managers, fellow developers, and designers, and was the de facto lead of a small FE team towards the end of my last role. Following some time out to go travelling I am now ready and eager to take up a new challenge.</p>
-					</div>
-				</section>
-				<section class="cv-section">
-					<header class="cv-section__header">
-						<h1>Career History</h1>
-					</header>
-					<div class="cv-section__body">
-						<section class="job">
-							<header class="job__header">
-								<h1 class="job__title">Sabbatical<br />October 2024 – April 2025</h1>
-							</header>
-							<div class="job__about">
-								<p>Took Taylor & Francis’ offer of voluntary redundancy and went cycle touring through New Zealand and Australia.</p>
-							</div>
-						</section>
-						<section class="job">
-							<header class="job__header">
-								<h1 class="job__title">
-									<span>Senior Front End Developer</span>
-									<span>F1000 / Taylor &amp; Francis</span>
-									<span>London</span>
-									<br />
-									<span>April 2017 - September 2024</span>
-								</h1>
-							</header>
-							<div class="job__about">
-								<p>F1000 is a producer of online open access scientific journals for researchers as well as large funders like the Wellcome Trust, the Gates Foundation, and the European Commission. In January 2020 F1000 was bought by Taylor & Francis, a publisher of academic journals and textbooks.</p>
-								<p>Technologies: HTML, CSS (SASS/SCSS), JavaScript (including ES6+), Typescript, jQuery, RESTful APIs, React, Jest, React Testing Library, Material UI, Velocity, gulp, Webpack, Node, Java, Scala, PostgreSQL, WordPress</p>
-								<ul>
-									<li>Worked with F1000’s editorial department to make continual improvements to the internal editorial management system that enhanced its functionality and the user experience. This included:
-										<ul>
-											<li>Prototyping using HTML5, SCSS and modern JavaScript (ES6+) features</li>
-											<li>Building out the finished product for user testing and subsequent deployment</li>
-											<li>Creating a cleaner UI which uses Material Design Lite as a foundation</li>
-											<li>Making use of RESTful APIs to increase system speed and reduce user waiting time</li>
-										</ul>
-									</li>
-									<li>Developed a new customer facing platform, alongside others in the front end team, in React using Material Design, microservices, WordPress, React Sagas, Redux, Babel, Jest & React Testing Library to replace the legacy monolithic one</li>
-									<li>Provided solutions to non-trivial questions posed by business analysts</li>
-									<li>Improvements to site functionality driven by either internal or external client requirements</li>
-									<li>Creating new funder platforms</li>
-									<li>Code reviews</li>
-									<li>Mentored junior developers</li>
-								</ul>
-							</div>
-						</section>
-						<section class="job">
-							<header class="job__header">
-								<h1 class="job__title">
-									<span>Front End Developer</span>
-									<span>Aurum</span>
-									<span>London</span>
-									<br />
-									<span>March 2015 - December 2016</span>
-								</h1>
-							</header>
-							<div class="job__about">
-								<p>Aurum is a hedge fund investment specialist managing fund of hedge fund portfolios.</p>
-								<p>Technologies: HTML, CSS (LESS), JavaScript, Grunt, Aurelia, Umbraco</p>
-								<ul>
-									<li>Rebuilt the company website, using Umbraco as its CMS</li>
-									<li>Planned and prototyped a specialised marketing site using the  <a href="http://aurelia.io/">Aurelia</a> JavaScript framework</li>
-								</ul>
-							</div>
-						</section>
-						<section class="job">
-							<header class="job__header">
-								<h1 class="job__title">
-									<span>Front End Developer</span>
-									<span>Hemscott / Morningstar</span>
-									<span>London</span>
-									<br />
-									<span>January 2008 - March 2015</span>
-								</h1>
-							</header>
-							<div class="job__about">
-								<p>Hemscott was a UK financial data provider. Acquired by Morningstar, a US financial data provider at the end of 2007, I became a member of the Integrated Web Tools (IWT) team which provided financial tools which are used on website of the company as well as its financial institution clients.</p>
+				<div class="additional-information">
+					<a rel="nofollow" href="resources/pdf/CV.pdf" title="Download PDF version">
+						<img src="resources/images/pdf.png" alt="PDF" />
+					</a>
+					<a rel="nofollow" href="mailto:jobs@clarissaclement.me.uk" title="Contact Me">
+						<img src="resources/images/email.png" alt="Email" />
+					</a>
+					<a rel="nofollow" href="http://uk.linkedin.com/in/clarissaclement" title="LinkedIn">
+						<img src="resources/images/linkedin.png" alt="LinkedIn" />
+					</a>
+				</div>
+			</div>
+		</header>
+		<main class="layout__body">
+			<section class="cv-section">
+				<header class="cv-section__header">
+					<h1>Profile</h1>
+				</header>
+				<div class="cv-section__body">
+					<p>I am a versatile front end web developer with more then 20 years experience across a variety of industries and in multiple team sizes on projects from small marketing sites to enterprise platforms. I am used to liaising with clients, project managers, fellow developers, and designers, and was the de facto lead of a small FE team towards the end of my last role. Following some time out to go travelling I am now ready and eager to take up a new challenge.</p>
+				</div>
+			</section>
+			<section class="cv-section">
+				<header class="cv-section__header">
+					<h1>Career History</h1>
+				</header>
+				<div class="cv-section__body">
+					<section class="job">
+						<header class="job__header">
+							<h1 class="job__title">Sabbatical<br />October 2024 – April 2025</h1>
+						</header>
+						<div class="job__about">
+							<p>Took Taylor & Francis’ offer of voluntary redundancy and went cycle touring through New Zealand and Australia.</p>
+						</div>
+					</section>
+					<section class="job">
+						<header class="job__header">
+							<h1 class="job__title">
+								<span>Senior Front End Developer</span>
+								<span>F1000 / Taylor &amp; Francis</span>
+								<span>London</span>
+								<br />
+								<span>April 2017 - September 2024</span>
+							</h1>
+						</header>
+						<div class="job__about">
+							<p>F1000 is a producer of online open access scientific journals for researchers as well as large funders like the Wellcome Trust, the Gates Foundation, and the European Commission. In January 2020 F1000 was bought by Taylor & Francis, a publisher of academic journals and textbooks.</p>
+							<p>Technologies: HTML, CSS (SASS/SCSS), JavaScript (including ES6+), Typescript, jQuery, RESTful APIs, React, Jest, React Testing Library, Material UI, Velocity, gulp, Webpack, Node, Java, Scala, PostgreSQL, WordPress</p>
+							<ul>
+								<li>Worked with F1000’s editorial department to make continual improvements to the internal editorial management system that enhanced its functionality and the user experience. This included:
+									<ul>
+										<li>Prototyping using HTML5, SCSS and modern JavaScript (ES6+) features</li>
+										<li>Building out the finished product for user testing and subsequent deployment</li>
+										<li>Creating a cleaner UI which uses Material Design Lite as a foundation</li>
+										<li>Making use of RESTful APIs to increase system speed and reduce user waiting time</li>
+									</ul>
+								</li>
+								<li>Developed a new customer facing platform, alongside others in the front end team, in React using Material Design, microservices, WordPress, React Sagas, Redux, Babel, Jest & React Testing Library to replace the legacy monolithic one</li>
+								<li>Provided solutions to non-trivial questions posed by business analysts</li>
+								<li>Improvements to site functionality driven by either internal or external client requirements</li>
+								<li>Creating new funder platforms</li>
+								<li>Code reviews</li>
+								<li>Mentored junior developers</li>
+							</ul>
+						</div>
+					</section>
+					<section class="job">
+						<header class="job__header">
+							<h1 class="job__title">
+								<span>Front End Developer</span>
+								<span>Aurum</span>
+								<span>London</span>
+								<br />
+								<span>March 2015 - December 2016</span>
+							</h1>
+						</header>
+						<div class="job__about">
+							<p>Aurum is a hedge fund investment specialist managing fund of hedge fund portfolios.</p>
+							<p>Technologies: HTML, CSS (LESS), JavaScript, Grunt, Aurelia, Umbraco</p>
+							<ul>
+								<li>Rebuilt the company website, using Umbraco as its CMS</li>
+								<li>Planned and prototyped a specialised marketing site using the  <a href="http://aurelia.io/">Aurelia</a> JavaScript framework</li>
+							</ul>
+						</div>
+					</section>
+					<section class="job">
+						<header class="job__header">
+							<h1 class="job__title">
+								<span>Front End Developer</span>
+								<span>Hemscott / Morningstar</span>
+								<span>London</span>
+								<br />
+								<span>January 2008 - March 2015</span>
+							</h1>
+						</header>
+						<div class="job__about">
+							<p>Hemscott was a UK financial data provider. Acquired by Morningstar, a US financial data provider at the end of 2007, I became a member of the Integrated Web Tools (IWT) team which provided financial tools which are used on website of the company as well as its financial institution clients.</p>
 
-								<p><em>Morningstar</em></p>
-								<p class="no-margin">Technologies: HTML, CSS, JavaScript, XML, XSL, XSL-FO, .NET (C#)</p>
-								<ul>
-									<li>Re-architected the factsheets resulting in a product which had easier implementation, greater functionality, more flexibility and a smaller code base</li>
-									<li>Thoroughly documented the above</li>
-									<li>Refactored the entirety of the existing CSS</li>
-									<li>Code reviews</li>
-									<li>Mentored junior developers</li>
-								</ul>
+							<p><em>Morningstar</em></p>
+							<p class="no-margin">Technologies: HTML, CSS, JavaScript, XML, XSL, XSL-FO, .NET (C#)</p>
+							<ul>
+								<li>Re-architected the factsheets resulting in a product which had easier implementation, greater functionality, more flexibility and a smaller code base</li>
+								<li>Thoroughly documented the above</li>
+								<li>Refactored the entirety of the existing CSS</li>
+								<li>Code reviews</li>
+								<li>Mentored junior developers</li>
+							</ul>
 
-								<p><em>Hemscott</em></p>
-								<p class="no-margin">Technologies: HTML, CSS, JavaScript, JSTL, Java</p>
-								<ul>
-									<li>Rebuilt two of the three main company websites</li>
-									<li>Constructed client microsites</li>
-								</ul>
-							</div>
-						</section>
-						<section class="job">
-							<header class="job__header">
-								<h1 class="job__title">Prior Roles</h1>
-							</header>
-							<div class="job__about">
-								<ul class="plain-list">
-									<li>
-										<span>Web Developer</span>
-										<span>Westcliff Data Services</span>
-										<span>Essex</span>
-										<span>2003 - 2005</span>
-									</li>
-									<li>
-										<span>Freelance Web Developer</span>
-										<span>Heritage &amp; Co</span>
-										<span>Leeds</span>
-										<span>2003</span>
-									</li>
-									<li>
-										<span>Web Developer</span>
-										<span>Accurate plc</span>
-										<span>Leeds</span>
-										<span>2002 - 2003</span>
-									</li>
-									<li>
-										<span>Developer</span>
-										<span>Rebus IS</span>
-										<span>Essex</span>
-										<span>2002</span>
-									</li>
-									<li>
-										<span>Financial Solutions Developer</span>
-										<span>Pharmarcia Ltd</span>
-										<span>London</span>
-										<span>2001 - 2002</span>
-									</li>
-									<li>
-										<span>Junior Web Developer</span>
-										<span>Oakley Internet</span>
-										<span>Essex</span>
-										<span>2001</span>
-									</li>
-							</div>
-						</section>
-					</div>
-				</section>
-				<section class="cv-section">
-					<header class="cv-section__header">
-						<h1>Portfolio</h1>
-					</header>
-					<div class="cv-section__body">
-						<ul>
-							<li>
-								<a rel="nofollow noreferrer" href="https://f1000research.com/" target="_blank">F1000 Research</a>
-							</li>
-							<li>
-								<a rel="nofollow noreferrer" href="https://verixiv.org/" target="_blank">VeriXiv</a>
-							</li>
-							<li>
-								<a rel="nofollow noreferrer" href="http://lt.morningstar.com/demo/" target="_blank">Morningstar Integrated Web Tools</a>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="cv-section">
-					<header class="cv-section__header">
-						<h1>Activities</h1>
-					</header>
-					<div class="cv-section__body">
-						<p>For 25 years now I have run and maintained a website for a <a rel="nofollow noreferrer" href="https://mountcc.org.uk/" target="_blank">cricket club</a> that I have been involved with for the last 30 years. In the beginning I used ASP with an MS Access database as the backend but it has since evolved in to a PHP site, underpinned by the CodeIgniter framework, with a MySQL database supplying data to an AJAX driven front end via RESTful APIs.</p>
-					</div>
-				</section>
-				<section class="cv-section">
-					<header class="cv-section__header">
-						<h1>Education</h1>
-					</header>
-					<div class="cv-section__body">
-						<p>BEng in Electronic Engineering (Hons)</p>
-					</div>
-				</section>
-			</main>
-			<footer class="layout__footer">
-				<ul class="additional-information">
-					<li class="additional-information__item">
-						<a rel="nofollow" href="resources/pdf/CV.pdf" class="additional-information__link" title="Download PDF version">
-							<img src="resources/images/pdf.png" alt="PDF" />
-						</a>
-					</li>
-					<li class="additional-information__item">
-						<a rel="nofollow" href="mailto:jobs@clarissaclement.me.uk" class="additional-information__link" title="Contact Me">
-							<img src="resources/images/email.png" alt="Email" />
-						</a>
-					</li>
-					<li class="additional-information__item">
-						<a rel="nofollow" href="http://uk.linkedin.com/in/clarissaclement" class="additional-information__link" title="LinkedIn">
-							<img src="resources/images/linkedin.png" alt="LinkedIn" />
-						</a>
-					</li>
-				</ul>
-			</footer>
+							<p><em>Hemscott</em></p>
+							<p class="no-margin">Technologies: HTML, CSS, JavaScript, JSTL, Java</p>
+							<ul>
+								<li>Rebuilt two of the three main company websites</li>
+								<li>Constructed client microsites</li>
+							</ul>
+						</div>
+					</section>
+					<section class="job">
+						<header class="job__header">
+							<h1 class="job__title">Prior Roles</h1>
+						</header>
+						<div class="job__about">
+							<ul class="plain-list">
+								<li>
+									<span>Web Developer</span>
+									<span>Westcliff Data Services</span>
+									<span>Essex</span>
+									<span>2003 - 2005</span>
+								</li>
+								<li>
+									<span>Freelance Web Developer</span>
+									<span>Heritage &amp; Co</span>
+									<span>Leeds</span>
+									<span>2003</span>
+								</li>
+								<li>
+									<span>Web Developer</span>
+									<span>Accurate plc</span>
+									<span>Leeds</span>
+									<span>2002 - 2003</span>
+								</li>
+								<li>
+									<span>Developer</span>
+									<span>Rebus IS</span>
+									<span>Essex</span>
+									<span>2002</span>
+								</li>
+								<li>
+									<span>Financial Solutions Developer</span>
+									<span>Pharmarcia Ltd</span>
+									<span>London</span>
+									<span>2001 - 2002</span>
+								</li>
+								<li>
+									<span>Junior Web Developer</span>
+									<span>Oakley Internet</span>
+									<span>Essex</span>
+									<span>2001</span>
+								</li>
+						</div>
+					</section>
+				</div>
+			</section>
+			<section class="cv-section">
+				<header class="cv-section__header">
+					<h1>Portfolio</h1>
+				</header>
+				<div class="cv-section__body">
+					<ul>
+						<li>
+							<a rel="nofollow noreferrer" href="https://f1000research.com/" target="_blank">F1000 Research</a>
+						</li>
+						<li>
+							<a rel="nofollow noreferrer" href="https://verixiv.org/" target="_blank">VeriXiv</a>
+						</li>
+						<li>
+							<a rel="nofollow noreferrer" href="http://lt.morningstar.com/demo/" target="_blank">Morningstar Integrated Web Tools</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="cv-section">
+				<header class="cv-section__header">
+					<h1>Activities</h1>
+				</header>
+				<div class="cv-section__body">
+					<p>For 25 years now I have run and maintained a website for a <a rel="nofollow noreferrer" href="https://mountcc.org.uk/" target="_blank">cricket club</a> that I have been involved with for the last 30 years. In the beginning I used ASP with an MS Access database as the backend but it has since evolved in to a PHP site, underpinned by the CodeIgniter framework, with a MySQL database supplying data to an AJAX driven front end via RESTful APIs.</p>
+				</div>
+			</section>
+			<section class="cv-section">
+				<header class="cv-section__header">
+					<h1>Education</h1>
+				</header>
+				<div class="cv-section__body">
+					<p>BEng in Electronic Engineering (Hons)</p>
+				</div>
+			</section>
+		</main>
 	</body>
 
 </html>

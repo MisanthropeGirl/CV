@@ -32,9 +32,6 @@ p {
 		margin-top: 0.5rem;;
 	}
 
-	&.no-margin {
-		margin: 0rem;
-	}	
 }
 
 ul {
@@ -47,17 +44,13 @@ ul {
 	@media (min-width: @bp-2) {
 		padding-left: 4rem;
 	}
-
-	&.plain-list {
-		list-style-type: none;
-		padding: 0rem;
-	}	
 }
 
 /*
  * Layout
  */
 body {
+	margin-top: 0rem;
 	margin-bottom: 4rem;
 	background-color: @colour-bg;
 	color: @colour-black;
@@ -66,7 +59,20 @@ body {
 .layout {
 
 	&__header {
+		position: sticky;
+		top: 0rem;
+		margin-left: -0.5rem;
+		margin-right: -0.5rem;
+		padding: 1rem 0rem;
+		border-bottom: 1px solid #cccccc;
+		background-color: @colour-bg;
 		text-align: center;
+
+		& > div {
+			position: relative;
+			max-width: 48rem;
+			margin: 0rem auto;
+		}
 
 		h1 {
 			font-size: 2rem;
@@ -76,22 +82,6 @@ body {
 	&__body {
 		max-width: 48rem;
 		margin: 2rem auto 0rem;
-	}
-
-	&__footer {
-		margin: 4rem auto 0rem;
-
-		@media (min-width: @bp-2) {
-			position: fixed;
-			 // mid-point - half main width - margin - footer width
-			left: calc(50% - 24rem - 2rem - 4.5rem);
-			top: 6rem;
-			border-bottom-color: @colour-blue;
-			border-radius: 15px;
-			box-shadow: 2px 2px 5px #aaaaaa;
-			margin: 0rem;
-			width: auto;
-		}
 	}
 }
 
@@ -136,28 +126,29 @@ body {
 }
 
 .additional-information {
+	margin-top: 1rem;
 	display: flex;
 	justify-content: center;
-	margin: 0rem;
-	padding: 0rem;
-	list-style-type: none;
+	align-items: center;
+	gap: 1rem;
 
 	@media (min-width: @bp-2) {
-		flex-direction: column;
-		margin: 0.5rem;
+		position: absolute;
+		top: 0.5rem;
+		right: 0rem;
+		margin-top: 0rem;
 	}
 
-	&__item {
-		padding: 0rem 1rem;
-
-		@media (min-width: @bp-2) {
-			padding: 0.75rem 1rem;
-		}
-	}
-
-	&__link {
+	img {
 		display: block;
-		height: 2rem;
-		width: 2rem;
 	}
+}
+
+.no-margin {
+	margin: 0rem;
+}
+
+.plain-list {
+	list-style-type: none;
+	padding: 0rem;
 }
