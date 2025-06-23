@@ -1,5 +1,17 @@
-Options All -Indexes +MultiViews
+# Disable directory listings (mod_autoindex)
+Options -Indexes
 
-RewriteEngine On
-RewriteCond $1 !^(index\.php|resources|robots\.txt)
-RewriteRule ^(.*)$ /index.php?page=$1 [L]
+# Look for index.html in the directory being requested
+DirectoryIndex index.html
+
+# Prevent mod_dir appending the trailing slash
+DirectorySlash Off
+
+# NB: For reasons I don't fully understand the following is required.
+# Taken from this answer on SO https://stackoverflow.com/a/69379573
+# If request a directory without a trailing slash then rewrite to append it
+# This allows DirectoryIndex to work as intended
+# - exclude the document root
+RewriteCond $1 !/$
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule (.+) $1/ [L]
