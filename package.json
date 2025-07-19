@@ -1,9 +1,11 @@
 {
   "name": "cv",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "type": "module",
   "description": "My CV",
   "homepage": "http://clarissaclement.me.uk/",
+  "main": "index.html",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "https://github.com/MisanthropeGirl/CV.git"
@@ -15,7 +17,8 @@
   },
   "scripts": {
     "start": "NODE_ENV='development' gulp",
-    "build": "NODE_ENV='production' gulp build"
+    "build": "NODE_ENV='production' gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [
     "> 1%"
@@ -27,11 +30,14 @@
     "del": "^8.0.0",
     "gulp": "^5.0.1",
     "gulp-clean-css": "^4.3.0",
-    "gulp-less": "^5.0.0",
-    "gulp-lesshint": "^6.1.0",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-noop": "^1.0.1",
     "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sass-lint": "^1.4.0",
     "gulp-size": "^5.0.0",
-    "gulp-sourcemaps": "^3.0.0"
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.89.2"
   }
 }

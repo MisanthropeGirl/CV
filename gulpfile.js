@@ -1,135 +1,103 @@
 // Conversion to ESM using this handy article
 // https://dev.to/gerryleonugroho/gulp-in-2025-a-practical-guide-to-automating-your-vanilla-web-projects-without-the-framework-fuss-62n
 
-import gulp from 'gulp';
-const { src, dest, watch, series, parallel } = gulp;
-import size from 'gulp-size';
+import { src, dest, watch, series, parallel } from "gulp";
+import * as dartSass from "sass";
+import gulpSass from "gulp-sass";
+import sassLint from "gulp-sass-lint";
 import noop from 'gulp-noop';
-import lesshint from 'gulp-lesshint';
-import less from 'gulp-less';
+import size from 'gulp-size';
+import sourcemaps from "gulp-sourcemaps";
 import postcss from 'gulp-postcss';
-import cleanCSS from 'gulp-clean-css';
-import sourcemaps from 'gulp-sourcemaps';
-import browserSync from 'browser-sync';
+import terser from "gulp-terser";
+import htmlmin from "gulp-htmlmin";
 import autoprefixer from 'autoprefixer';
+import browserSyncLib from "browser-sync";
 import cssnano from 'cssnano';
-import { deleteAsync } from 'del';
+import { deleteAsync } from "del";
 
-const
+const sass = gulpSass(dartSass);
+const browserSync = browserSyncLib.create();
 
-  // development or production
-  isProd = (process.env.NODE_ENV || 'development').trim().toLowerCase() === 'production',
+// development or production
+const isProd = (process.env.NODE_ENV || 'development').trim().toLowerCase() === 'production';
 
-  // directory locations
-  paths = {
-    styles: {
-      src: 'src/less/*.less',
-      watch: 'src/less/**/*.less',
-      dest: 'resources/css'
-    }
-  };
-
-
-
-
+// Paths
+const paths = {
+  html: {
+    src: "src/*.html",
+    dest: "resources/",
+  },
+  styles: {
+    src: "src/scss/**/*.scss",
+    dest: "resources/css/",
+  },
+  scripts: {
+    src: "src/js/**/*.js",
+    dest: "resources/js/",
+  },
+};
 
 // Clean dist folder
 export function clean() {
   return deleteAsync(["resources/css/*", "!resources/css"]);
-}
-
-
-
-
-
-/**
- * STYLING
- */
-
-// configuration options
-const cssConfig = {
-  src: paths.styles.src,
-  watch: paths.styles.watch,
-  dest: paths.styles.dest,
-  postCSS: [autoprefixer(), cssnano()]
 };
 
-// linter
+// lint SCSS files
 export function stylesLint() {
-  console.log("Linting…");
-  return src(cssConfig.src)
-    .pipe(lesshint({
-      configPath: '/'
-     }))
-    .pipe(lesshint.reporter()) // Leave empty to use the default, 'stylish'
-    .pipe(lesshint.failOnError()); // Use this to fail the task on lint errors
-}
+  return src(paths.styles.src)
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError()); // Use this to fail the task on lint errors
+};
 
-// transformation
+// Compile and minify SCSS files
 export function styles() {
-  console.log("Compiling…");
-  return src(cssConfig.src)
+  return src(paths.styles.src)
     .pipe(!isProd ? sourcemaps.init() : noop())
-    .pipe(less())
-    .pipe(postcss(cssConfig.postCSS))
-    .pipe(cleanCSS({debug: true}))
+    .pipe(sass().on("error", sass.logError))
+    .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(!isProd ? sourcemaps.write() : noop())
     .pipe(size({ showFiles:true }))
-    .pipe(dest(cssConfig.dest))
-    // .pipe(!isProd ? browserSync.reload({ stream: true }) : noop());
+    .pipe(dest(paths.styles.dest))
     .pipe(!isProd ? browserSync.stream() : noop());
-}
+};
 
+// Minify HTML files
+export function html() {
+  return src(paths.html.src)
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(dest(paths.html.dest))
+    .pipe(!isProd ? browserSync.stream() : noop());
+};
 
+// Minify JS files
+export function scripts() {
+  return src(paths.scripts.src)
+    .pipe(terser())
+    .pipe(dest(paths.scripts.dest))
+    .pipe(!isProd ? browserSync.stream() : noop());
+};
 
-
-
-/**
- * BROWSER SYNCHRONIZATION
- */
-
-// configuration options
-// const syncConfig = {
-//   server: {
-//     baseDir: './CV/',
-//     index: 'index.php'
-//   },
-//   port: 8888,
-//   open: false
-// };
-
-// browser-sync
+// Dev Server
 export function serve() {
-  if (isProd) return;
-
-  // browserSync.init(syncConfig);
-
   browserSync.init({
     server: {
-      baseDir: paths.styles.dest,
+      baseDir: ".",
     },
-    port: 8888,
-    open: false
   });
 
+  // watch(paths.html.src, html);
   watch(paths.styles.src, series(stylesLint, styles));
-}
+  // watch(paths.scripts.src, scripts);
+};
 
-// watch
-// function watchTask() {
-//   watch(
-//     [cssConfig.watch],
-//     series(stylesLint, styles)
-//   );
-// }
-
-
-
-
-
+// Build task
 export const build = series(
   clean,
   series(stylesLint, styles)
+  // parallel(html, series(stylesLint, styles), scripts)
 );
 
+// Default task
 export default series(build, serve);
