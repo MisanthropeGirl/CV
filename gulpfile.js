@@ -9,8 +9,6 @@ import noop from 'gulp-noop';
 import size from 'gulp-size';
 import sourcemaps from "gulp-sourcemaps";
 import postcss from 'gulp-postcss';
-import terser from "gulp-terser";
-import htmlmin from "gulp-htmlmin";
 import autoprefixer from 'autoprefixer';
 import browserSyncLib from "browser-sync";
 import cssnano from 'cssnano';
@@ -24,24 +22,17 @@ const isProd = (process.env.NODE_ENV || 'development').trim().toLowerCase() === 
 
 // Paths
 const paths = {
-  html: {
-    src: "src/*.html",
-    dest: "resources/",
-  },
   styles: {
-    src: "src/scss/**/*.scss",
+    src: 'src/scss/*.scss',
+    watch: 'src/scss/**/*.scss',
     dest: "resources/css/",
-  },
-  scripts: {
-    src: "src/js/**/*.js",
-    dest: "resources/js/",
   },
 };
 
-// Clean dist folder
-export function clean() {
-  return deleteAsync(["resources/css/*", "!resources/css"]);
-};
+// Clean resources/css
+export function stylesClean() {
+  return deleteAsync(paths.styles.dest);
+}
 
 // lint SCSS files
 export function stylesLint() {
@@ -63,41 +54,22 @@ export function styles() {
     .pipe(!isProd ? browserSync.stream() : noop());
 };
 
-// Minify HTML files
-export function html() {
-  return src(paths.html.src)
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(dest(paths.html.dest))
-    .pipe(!isProd ? browserSync.stream() : noop());
-};
-
-// Minify JS files
-export function scripts() {
-  return src(paths.scripts.src)
-    .pipe(terser())
-    .pipe(dest(paths.scripts.dest))
-    .pipe(!isProd ? browserSync.stream() : noop());
-};
+export const buildStyles = series(stylesClean, stylesLint, styles);
 
 // Dev Server
 export function serve() {
   browserSync.init({
+    browser: "google chrome",
     server: {
       baseDir: ".",
     },
   });
 
-  // watch(paths.html.src, html);
-  watch(paths.styles.src, series(stylesLint, styles));
-  // watch(paths.scripts.src, scripts);
+  watch(paths.styles.src, buildStyles);
 };
 
 // Build task
-export const build = series(
-  clean,
-  series(stylesLint, styles)
-  // parallel(html, series(stylesLint, styles), scripts)
-);
+export const build = buildStyles;
 
 // Default task
 export default series(build, serve);
