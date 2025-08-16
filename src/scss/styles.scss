@@ -1,22 +1,40 @@
-$bp-1: 480px;
-$bp-2: 960px;
+@use 'sass:map';
 
-$colour-bg: #fafafa;
-$colour-black: #333;
-$color-grey: #ccc;
-$colour-blue: #6587ed;
+$breakpoint: 60rem;
+$max-width: 48rem;
 
+$colours: (
+	'background': #fafafa,
+	'black': #333,
+	'grey': #ccc,
+	'blue': #6587ed,
+);
 
-/*!
- * Base
- */
+$spacing-unit: 1rem;
+$spacing: (
+	'0.25x': calc($spacing-unit / 4),
+	'0.5x': calc($spacing-unit / 2),
+	'1x': $spacing-unit,
+	'2x': calc($spacing-unit * 2),
+	'4x': calc($spacing-unit * 4),
+);
+
+// Basics
 html {
 	line-height: 1.5;
 	font-family: 'Verdana Helvetica Arial sans-serif';
+	font-size: 16px;
+}
+
+body {
+	margin-top: 0;
+	margin-bottom: map.get($spacing, '4x');
+	background-color: map.get($colours, 'background');
+	color: map.get($colours, 'black');
 }
 
 a {
-	color: $colour-blue;
+	color: map.get($colours, 'blue');
 }
 
 h1 {
@@ -25,106 +43,90 @@ h1 {
 }
 
 p {
-	margin: 1rem 0 0;
+	margin: map.get($spacing, '1x') 0 0;
 	text-align: justify;
 
 	&:first-child {
-		margin-top: 0.5rem;
+		margin-top: map.get($spacing, '0.5x');
 	}
 
 }
 
 ul {
-	padding-left: 2rem;
+	padding-left: clamp(map.get($spacing, '2x'), 8.33vw, map.get($spacing, '4x'));
 
 	&:first-child {
-		margin-top: 0.5rem;
-	}
-
-	@media (min-width: $bp-2) {
-		padding-left: 4rem;
+		margin-top: map.get($spacing, '0.5x');
 	}
 }
 
-/*!
- * Layout
- */
-body {
-	margin-top: 0;
-	margin-bottom: 4rem;
-	background-color: $colour-bg;
-	color: $colour-black;
-}
-
-
-// .layout {}
-
+// Page layout
 .layout__header {
 	position: sticky;
 	top: 0;
-	margin-right: -0.5rem;
-	margin-left: -0.5rem;
-	border-bottom: 1px solid $color-grey;
-	background-color: $colour-bg;
-	padding: 1rem 0;
+	margin-right: map.get($spacing, '0.5x') * -1;
+	margin-left: map.get($spacing, '0.5x') * -1;
+	border-bottom: 1px solid map.get($colours, 'grey');
+	background-color: inherit;
+	padding: map.get($spacing, '1x') 0;
 	text-align: center;
 
 	& > div {
 		position: relative;
 		margin: 0 auto;
-		max-width: 48rem;
+		max-width: $max-width;
 	}
 
 	h1 {
-		font-size: 2rem;
+		font-size: 2em;
 	}
 }
 
 .layout__body {
-	margin: 2rem auto 0;
-	max-width: 48rem;
+	margin: map.get($spacing, '2x') auto 0;
+	max-width: $max-width;
 }
 
-
+// Components
 .cv-section {
-	margin-top: 2rem;
+	margin-top: map.get($spacing, '2x');
 }
 
 .cv-section__header {
 	h1 {
-		border-bottom: 1px solid $colour-blue;
+		border-bottom: 1px solid map.get($colours, 'blue');
 		text-transform: uppercase;
-		font-size: 1.125rem;
+		font-size: 1.125em;
 	}
 }
 
 
 .job {
-	margin-top: 2rem;
+	margin-top: map.get($spacing, '2x');
 
 	&:first-of-type {
-		margin-top: 0.5rem;
+		margin-top: map.get($spacing, '0.5x');
 	}
 }
 
 .job__title {
-	font-size: 1rem;
+	font-size: 1em;
 
 	span:not(:nth-last-of-type(-n+2)) {
 		&::after {
-			margin-left: 0.25rem;
+			margin-left: map.get($spacing, '0.25x');
 			content: '—';
 		}
 	}
 }
 
 .job__about {
-	ul + ul {
+	ul ul {
 		margin-top: 0;
 	}
 
 	li {
-		margin-top: 0.25rem;
+		margin-top: map.get($spacing, '0.25x');
 		text-align: justify;
 	}
 }
@@ -134,12 +136,12 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 1rem;
-	gap: 1rem;
+	margin-top: map.get($spacing, '1x');
+	gap: map.get($spacing, '1x');
 
-	@media (min-width: $bp-2) {
+	@media (min-width: $breakpoint) {
 		position: absolute;
-		top: 0.5rem;
+		top: map.get($spacing, '0.5x');
 		right: 0;
 		margin-top: 0;
 	}
@@ -149,7 +151,7 @@ body {
 	}
 }
 
-
+// Utility
 .no-margin {
 	margin: 0;
 }
