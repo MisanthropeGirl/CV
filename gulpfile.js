@@ -65,7 +65,8 @@ export function serve() {
     },
   });
 
-  watch(paths.styles.src, buildStyles);
+  watch(paths.styles.watch, buildStyles);
+  watch("index.html").on("change", browserSync.reload);;
 };
 
 // Build task

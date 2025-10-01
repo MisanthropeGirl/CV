@@ -112,22 +112,50 @@ ul {
 .job__title {
 	font-size: 1em;
 
-	span:not(:nth-last-of-type(-n+2)) {
-		&::after {
+	span + span {
+		&::before {
+			margin-right: map.get($spacing, '0.5x');
 			margin-left: map.get($spacing, '0.25x');
-			content: '—';
+			font-style: normal;
+			content: '|';
 		}
 	}
 }
 
-.job__about {
-	ul ul {
-		margin-top: 0;
-	}
+.job__date {
+	font-style: italic;
+}
 
+.job__company {
+	font-style: italic;
+}
+
+.job__about {
 	li {
 		margin-top: map.get($spacing, '0.25x');
 		text-align: justify;
+	}
+}
+
+.job__priors {
+	padding: 0;
+	list-style-type: none;
+
+	span:first-of-type {
+		&::after {
+			margin-right: map.get($spacing, '0.25x');
+			margin-left: map.get($spacing, '0.5x');
+			content: '\2014';
+		}
+	}
+
+	span:last-of-type {
+		&::before {
+			margin-right: map.get($spacing, '0.5x');
+			margin-left: map.get($spacing, '0.25x');
+			font-style: normal;
+			content: '|';
+		}
 	}
 }
 
@@ -149,14 +177,4 @@ ul {
 	img {
 		display: block;
 	}
-}
-
-// Utility
-.no-margin {
-	margin: 0;
-}
-
-.plain-list {
-	padding: 0;
-	list-style-type: none;
 }
